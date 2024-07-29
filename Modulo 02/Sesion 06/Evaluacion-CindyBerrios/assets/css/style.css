@@ -1,0 +1,25 @@
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.jumbotron {
+    background: url('your-image-url.jpg') no-repeat center center;
+    background-size: cover;
+    color: #051B54;
+}
+
+.form-control, .form-group label {
+    color: #051B54;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+form {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}

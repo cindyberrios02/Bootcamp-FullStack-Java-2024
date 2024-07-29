@@ -1,0 +1,16 @@
+.form-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+}
+
+.jumbotron-custom {
+    background-color: #00a4c8;
+    color: white;
+    text-align: center;
+}
+.jumbotron-custom p {
+    color: #b2e1e5;
+}
