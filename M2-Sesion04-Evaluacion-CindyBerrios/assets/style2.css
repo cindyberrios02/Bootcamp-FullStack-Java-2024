@@ -1,0 +1,63 @@
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallery{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around
+}
+.gallery-item{
+    flex: 0 1 calc(33.33% - 10px); /* 3 imágenes por fila */
+    width:300px;
+    height: auto;
+    object-fit: contain;
+    padding: 10px;
+    border: 2px green solid;
+    
+}
+.gallery-item img{
+    width:100%; /* este atributo es para que ocupe el 100% del tamano del flex que ocupe la pantalla */
+    border-radius: 10px;
+}
+
+
+/* 
+
+    Pantalla grande (>750 y <1200px) 
+
+*/
+
+@media(min-width:751px) and (max-width:1199px) {
+    .gallery-item{
+        flex: 0 1 calc(50% - 10px); /* 2 imágenes por fila */
+        border: 2px greenyellow solid;
+
+    }
+}
+
+/* 
+   Pantalla Mediana (>500 y <750px) 
+*/
+
+@media(min-width:501px) and (max-width:750px) {
+    .gallery-item{
+        flex: 0 1 calc(50% - 10px); /* 2 imágenes por fila */
+        border: 2px yellow solid;
+    }
+
+}
+
+/* 
+   Pantalla pequeña (>=500px) 
+*/
+
+@media(max-width:500px) {
+    .gallery-item{
+        flex: 0 1 calc(100% - 10px); /* 2 imágenes por fila */
+        border: 2px red solid;
+    }
+}
