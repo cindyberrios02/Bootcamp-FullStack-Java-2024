@@ -1,25 +1,11 @@
-body {
-    font-family: Verdana, sans-serif;
+* {
+    font-family: Verdana, serif;
 }
 
-.navbar-brand {
-    font-family: 'Gill Sans', sans-serif;
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255);
 }
 
-.jumbotron {
-    background: url('your-image-url.jpg') no-repeat center center;
-    background-size: cover;
-    color: #051B54;
-}
-
-.form-control, .form-group label {
-    color: #051B54;
-}
-
-.form-row {
-    margin-bottom: 15px;
-}
-
-form {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255);
 }
