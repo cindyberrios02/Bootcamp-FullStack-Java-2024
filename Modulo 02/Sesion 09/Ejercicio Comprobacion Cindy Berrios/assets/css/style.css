@@ -1,0 +1,11 @@
+#text2 {
+    display: none;
+}
+
+#img {
+    transition: transform 0.3s;
+}
+
+#caja3 p {
+    transition: font-size 0.3s;
+}
