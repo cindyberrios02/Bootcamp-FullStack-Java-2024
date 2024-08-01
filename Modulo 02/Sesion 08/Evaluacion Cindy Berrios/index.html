@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Banca en Línea</title>
+</head>
+<body>
+    <h1>Banca en línea</h1>
+
+    <div id="login">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <label for="id">Identificador:</label>
+            <input type="text" id="id" required><br><br>
+            <label for="password">Clave:</label>
+            <input type="password" id="password" required><br><br>
+            <button type="submit">Ingresar</button>
+        </form>
+        <p id="loginError" class="hidden">Identificador o clave incorrectos.</p>
+    </div>
+
+    <div id="menu" class="hidden">
+        <h2>Bienvenido</h2>
+        <p id="clienteNombre"></p>
+        <button onclick="mostrarMenu()">Mostrar Menú</button>
+        <p id="saldoInfo" class="hidden"></p>
+        <p id="operacionInfo" class="hidden"></p>
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

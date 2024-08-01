@@ -1,11 +1,72 @@
 * {
     font-family: Verdana, serif;
 }
-
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255, 255, 255);
+/* Navbar */
+.navbar {
+    background-color: #051B54;
+    color: #FFFFFF;
+    box-shadow: 0 2px 4px 2px #00000099;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: rgba(255, 255, 255);
+.navbar-title {
+    font-family: 'Gill Sans MT', serif;
+}
+
+/* Login Button */
+.login-button {
+    background-color: #FFFFFF33;
+    border-radius: 25px;
+    border: transparent solid;
+    color: #FFFFFF;
+}
+
+/* Main Content */
+.main-content {
+    background-color: turquoise;
+    border: 2px solid darkturquoise;
+    border-radius: 8px;
+}
+
+.content-row {
+    min-height: 400px;
+}
+
+/* Link without decoration */
+.link-no-decoration {
+    text-decoration: none;
+}
+
+/* Image Container */
+.image-container {
+    background-color: red;
+}
+
+.responsive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 400px;
+    margin: auto;
+}
+
+/* Spacer */
+.spacer {
+    height: 50px;
+}
+
+/* Shadow Container */
+.shadow-container {
+    box-shadow: 2px 0 10px 1px #00000033;
+    border-radius: 10px;
+}
+
+/* Custom Select */
+.select-custom {
+    border: transparent;
+    width: fit-content;
+}
+
+/* Transparent Label */
+.label-transparent {
+    color: transparent;
 }

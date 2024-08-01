@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Virtual Eva Mentel</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Eva - Asistente Virtual de Mentel</h1>
+        <div class="card">
+            <div class="card-body">
+                <p>¡Hola! Soy Eva, tu asistente virtual del Servicio al Cliente de Mentel. Estoy aquí para ayudarte en lo que necesites.</p>
+                <form id="mainMenuForm">
+                    <div class="form-group">
+                        <label for="mainOption">Escribe el número de la opción que buscas:</label>
+                        <select class="form-control" id="mainOption" required>
+                            <option value="" selected disabled>Selecciona una opción...</option>
+                            <option value="1">Boletas y Pagos</option>
+                            <option value="2">Señal y llamadas</option>
+                            <option value="3">Oferta comercial</option>
+                            <option value="4">Otras consultas</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Boletas y Pagos -->
+    <div class="modal fade" id="boletasPagosModal" tabindex="-1" aria-labelledby="boletasPagosLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="boletasPagosLabel">Boletas y Pagos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="boletasPagosForm">
+                        <div class="form-group">
+                            <label for="boletasPagosOption">Seleccione una opción:</label>
+                            <select class="form-control" id="boletasPagosOption" required>
+                                <option value="" selected disabled>Selecciona una opción...</option>
+                                <option value="1">Ver Boleta</option>
+                                <option value="2">Pagar cuenta</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Señal y Llamadas -->
+    <div class="modal fade" id="senalLlamadasModal" tabindex="-1" aria-labelledby="senalLlamadasLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="senalLlamadasLabel">Señal y Llamadas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="senalLlamadasForm">
+                        <div class="form-group">
+                            <label for="senalLlamadasOption">Seleccione una opción:</label>
+                            <select class="form-control" id="senalLlamadasOption" required>
+                                <option value="" selected disabled>Selecciona una opción...</option>
+                                <option value="1">Problemas con la señal</option>
+                                <option value="2">Problemas con las llamadas</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="issueGroup">
+                            <label for="issueDescription">Por favor, describa su problema:</label>
+                            <textarea class="form-control" id="issueDescription" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirmación de Solicitud -->
+    <div class="modal fade" id="confirmSolicitudModal" tabindex="-1" aria-labelledby="confirmSolicitudLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmSolicitudLabel">Confirmación de Solicitud</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Estimado usuario, su solicitud:</p>
+                    <p id="solicitudText" class="font-weight-bold"></p>
+                    <p>Ha sido ingresada con éxito.</p>
+                    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Oferta Comercial -->
+    <div class="modal fade" id="ofertaComercialModal" tabindex="-1" aria-labelledby="ofertaComercialLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ofertaComercialLabel">Oferta Comercial</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="ofertaComercialForm">
+                        <div class="form-group">
+                            <label for="ofertaComercialOption">¿Está interesado en nuestra oferta comercial?</label>
+                            <select class="form-control" id="ofertaComercialOption" required>
+                                <option value="" selected disabled>Selecciona una opción...</option>
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Otras Consultas -->
+    <div class="modal fade" id="otrasConsultasModal" tabindex="-1" aria-labelledby="otrasConsultasLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="otrasConsultasLabel">Otras Consultas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="otrasConsultasForm">
+                        <div class="form-group">
+                            <label for="consulta">Por favor ingrese su consulta:</label>
+                            <textarea class="form-control" id="consulta" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirmación de Consulta -->
+    <div class="modal fade" id="confirmConsultaModal" tabindex="-1" aria-labelledby="confirmConsultaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmConsultaLabel">Confirmación de Consulta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Estimado usuario, su consulta:</p>
+                    <p id="consultaText" class="font-weight-bold"></p>
+                    <p>Ha sido ingresada con éxito.</p>
+                    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+   
+     <script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
