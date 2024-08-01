@@ -1,52 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
     <title>Banca en Línea</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
 </head>
 <body>
-    <h1>Banca en línea</h1>
+    <div class="container mt-5">
+        <h1 class="text-center">Banca en Línea</h1>
 
-    <div id="login">
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-            <label for="id">Identificador:</label>
-            <input type="text" id="id" required><br><br>
-            <label for="password">Clave:</label>
-            <input type="password" id="password" required><br><br>
-            <button type="submit">Ingresar</button>
-        </form>
-        <p id="loginError" class="hidden">Identificador o clave incorrectos.</p>
+        <!-- Sección de inicio de sesión -->
+        <div id="login" class="mt-4">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="id">Identificador:</label>
+                    <input type="text" class="form-control" id="id" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Clave:</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <p id="loginError" class="text-danger mt-2 d-none">Identificador o clave incorrectos.</p>
+            </form>
+        </div>
+
+        <!-- Sección del menú -->
+        <div id="menu" class="mt-4 d-none">
+            <h2>Bienvenido</h2>
+            <p id="clienteNombre"></p>
+            <button class="btn btn-secondary" onclick="mostrarMenu()">Mostrar Menú</button>
+            <div id="menuOptions" class="mt-3 d-none">
+                <button class="btn btn-info" onclick="verSaldo()">Ver Saldo</button>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#giroModal">Realizar Giro</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#depositoModal">Realizar Depósito</button>
+                <button class="btn btn-danger" onclick="salir()">Salir</button>
+            </div>
+            <div id="saldoInfo" class="mt-3 d-none"></div>
+        </div>
     </div>
 
-    <div id="menu" class="hidden">
-        <h2>Bienvenido</h2>
-        <p id="clienteNombre"></p>
-        <button onclick="mostrarMenu()">Mostrar Menú</button>
-        <p id="saldoInfo" class="hidden"></p>
-        <p id="operacionInfo" class="hidden"></p>
+    <!-- Modal para Realizar Giro -->
+    <div class="modal fade" id="giroModal" tabindex="-1" role="dialog" aria-labelledby="giroModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="giroModalLabel">Realizar Giro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="giroForm">
+                        <div class="form-group">
+                            <label for="montoGiro">Monto a Girar:</label>
+                            <input type="number" class="form-control" id="montoGiro" step="0.01" min="0" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Girar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    
-    
+    <!-- Modal para Realizar Depósito -->
+    <div class="modal fade" id="depositoModal" tabindex="-1" role="dialog" aria-labelledby="depositoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="depositoModalLabel">Realizar Depósito</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="depositoForm">
+                        <div class="form-group">
+                            <label for="montoDeposito">Monto a Depositar:</label>
+                            <input type="number" class="form-control" id="montoDeposito" step="0.01" min="0" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Depositar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/js/script2.js"></script>
 </body>
 </html>
