@@ -22,8 +22,21 @@ document.addEventListener('DOMContentLoaded', function () {
         img.style.transform = 'scale(1)';
     });
 
-    // Agrandar el texto al hacer doble clic
+    // Inicializar una variable de estado para rastrear si el texto está agrandado
+    let textoAgrandado = false;
+
     caja3.addEventListener('dblclick', function () {
-        caja3.querySelector('p').style.fontSize = '2rem';
+        // Invertir el estado
+        textoAgrandado = !textoAgrandado;
+
+        // Aplicar el estilo según el estado
+        if (textoAgrandado) {
+            caja3.querySelector('p').style.fontSize = '2rem';
+        } else {
+            caja3.querySelector('p').style.fontSize = '1rem'; // O cualquier otro tamaño que desees
+        }
     });
+
+
+
 });

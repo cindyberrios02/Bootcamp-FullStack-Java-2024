@@ -1,5 +1,6 @@
 #text2 {
     display: none;
+    width: 30%;
 }
 
 #img {
@@ -8,4 +9,8 @@
 
 #caja3 p {
     transition: font-size 0.3s;
+}
+
+#text1 {
+    background-color: blueviolet;
 }
