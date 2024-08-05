@@ -1,0 +1,22 @@
+/* CSS permanece igual, excepto por la nueva clase */
+.agrandado {
+    font-size: 2rem;
+  }
+
+  #text2 {
+    display: none;
+    width: 30%;
+  }
+  
+  #img {
+    transition: transform 0.3s;
+  }
+  
+  #caja3 p {
+    transition: font-size 0.3s;
+  }
+  
+  #text1 {
+    background-color: blueviolet;
+  }
+  
